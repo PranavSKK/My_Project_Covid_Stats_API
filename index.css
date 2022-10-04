@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    height: 100vh;
+    box-sizing: border-box;
+    background:url("https://www.edgeeffect.org/wp-content/uploads/2020/04/covid_smaller.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.media{
+    height: 100%;
+}
+.heading{
+    height: 2em;
+    width: 40em;
+    /* background-color:red; */
+    /* opacity: 40%; */
+    color: black;
+    border: 6px solid black;
+    position: relative;
+    top: 1em;
+    left: 32em;
+    font-size: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    
+}
+.date{
+    height: 2%;
+    width: 25%;
+    background-color: khaki;
+    position: relative;
+    top: 0.9em;
+    left:39em;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    border: 2px solid black;
+}
+.searchBox{
+    height: 1.5em;
+    width: 30em;
+    /* background-color: bisque; */
+    /* border: 2px solid black; */
+    position: relative;
+    top: 1em;
+    left: 37em;
+}
+.input{
+    height: 100%;
+    width: 70%;
+    float: left;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: cursive;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.button{
+    height: 100%;
+    width: 30%;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: cursive;
+    background-color: aqua;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.display{
+    height: 360px;
+    width: 30em;
+    /* background-color: blue; */
+    position: relative;
+    top: 1.5em;
+    left: 37em;
+}
+.section{
+    height:50px;
+    width: 100%;
+    /* background-color: brown; */
+    /* border: 2px solid white; */
+}
+.sectionName{
+    height: 30px;
+    width: 40%;
+    position: relative;
+    display: flex;
+    top: 10px;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    border-right: 5px solid black;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background-color: aqua;
+    float: left;
+    border-bottom-left-radius: 20px;
+}
+.sectionContent{
+    height: 30px;
+    width: 57%;
+    position: relative;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: chartreuse;
+    float: right;
+    border-right: 8px solid black;
+    border-bottom-left-radius: 20px;
+    text-transform: capitalize;
+}
+@media(max-width:1087px){
+    .media{
+        margin-left: -600px;
+        overflow-y: auto;
+    }
+    .section{
+        height: 80px;
+    }
+}

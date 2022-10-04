@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Stats</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="media">
+        <div class="heading"><h1>COVID-19 STATS</h1>
+        </div>
+        <div class="date"></div>
+        
+        <div class="searchBox">
+            <input  class="input" type="search" placeholder="Enter the country Name">
+            <button class="button" id="btn">Search</button>
+        </div>
+        <div class="display">
+            <div class="section">
+                <div class="sectionName">Country</div>
+                <div class="sectionContent countryName"></div>
+            </div>
+            <div class="section">
+                <div class="sectionName">New Cases</div>
+                <div class="sectionContent NewCases"></div>
+            </div>
+            <div class="section">
+                <div class="sectionName">Total Cases</div>
+                <div class="sectionContent TotalCases"></div>
+            </div>
+            <div class="section">
+                <div class="sectionName">New Deaths</div>
+                <div class="sectionContent NewDeaths"></div>
+            </div>
+            <div class="section">
+                <div class="sectionName">Total Deaths</div>
+                <div class="sectionContent TotalDeaths"></div>
+            </div>
+            <div class="section">
+                <div class="sectionName">New Recovered</div>
+                <div class="sectionContent NewRecovered"></div>
+            </div>
+            <div class="section">
+                <div class="sectionName">Total Recovered</div>
+                <div class="sectionContent TotalRecovered"></div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script>
+        let submit=document.querySelector("#btn")
+        let nm=document.querySelector(".input")
+        let countryName=document.querySelector(".countryName")
+
+        
+        total_deaths=document.querySelector(".TotalDeaths")
+        new_cases=document.querySelector(".NewCases")
+        total_cases=document.querySelector(".TotalCases")
+        new_deaths=document.querySelector(".NewDeaths")
+        new_recovered=document.querySelector(".NewRecovered")
+        total_recovered=document.querySelector(".TotalRecovered")
+        date=document.querySelector(".date") 
+
+    
+        window.onload=function(){
+
+            submit.onclick=function(){
+                countryName.innerText=nm.value  
+           
+            fetch("https://api.covid19api.com/summary").then(d=>d.json()).then(d=>{
+                // console.log( countryName.innerText)
+            
+                const [corona]=d.Countries.filter(c=>c.Country==`${countryName.innerText}`)
+                total_deaths.innerText=corona.TotalDeaths
+                new_cases.innerText=corona.NewConfirmed
+                total_cases.innerText=corona.TotalConfirmed
+                new_deaths.innerText=corona.NewDeaths
+                new_recovered.innerText=corona.NewRecovered
+                total_recovered.innerText=corona.TotalRecovered
+                date.innerText=`As Per Date-${corona.Date}`
+                    
+                
+                })
+            
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
